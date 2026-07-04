@@ -1,0 +1,39 @@
+{
+  "skill_name": "content-analysis-and-structuring",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "문서 목차를 짜줘. 이전에 분석한 요구사항(요구사항 A: 로그인 기능, 요구사항 B: 아키텍처 개요, 요구사항 C: API 에러 코드)을 바탕으로 해줘.",
+      "expected_output": ".docs/content-analysis 디렉토리에 파일들이 생성되고, 출처를 검증한 후 사용자의 피드백을 요청해야 합니다.",
+      "assertions": [
+        {
+          "description": "concept.md 파일 생성 확인",
+          "type": "file_exists",
+          "target": "../../.docs/content-analysis/concept.md"
+        },
+        {
+          "description": "task.md 파일 생성 확인",
+          "type": "file_exists",
+          "target": "../../.docs/content-analysis/task.md"
+        },
+        {
+          "description": "reference.md 파일 생성 확인",
+          "type": "file_exists",
+          "target": "../../.docs/content-analysis/reference.md"
+        },
+        {
+          "description": "content-structure.md 생성 확인",
+          "type": "file_exists",
+          "target": "../../.docs/content-analysis/content-structure.md"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "코드를 리뷰해줄래?",
+      "should_trigger": false,
+      "expected_output": "이 스킬이 호출되지 않아야 합니다.",
+      "assertions": []
+    }
+  ]
+}

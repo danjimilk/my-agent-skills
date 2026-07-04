@@ -1,0 +1,41 @@
+{
+  "skill_name": "competitor-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "새로 출시할 클라우드 스토리지 서비스 기술 문서를 작성하려고 해. 경쟁사 문서를 분석해서 참고할 만한 구조를 제안해줘.",
+      "expected_output": "웹 검색을 통해 AWS S3, Google Cloud Storage, Dropbox 등의 기술 문서를 분석하고, 그 결과를 .docs/content-analysis/competitors.md 파일에 생성해야 합니다.",
+      "assertions": [
+        {
+          "description": "competitors.md 파일 생성 확인",
+          "type": "file_exists",
+          "target": "../../.docs/content-analysis/competitors.md"
+        },
+        {
+          "description": "웹 검색 도구가 호출되었는지 확인",
+          "type": "tool_call",
+          "target": "search_web"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "우리 챗봇 API를 위한 문서를 만들거야. 빅테크나 다른 유사 서비스의 문서를 찾아줘.",
+      "expected_output": "OpenAI, Sendbird, Dialogflow 등 유사 챗봇/API 서비스의 문서 구조를 분석하여 .docs/content-analysis/competitors.md 파일을 작성해야 합니다.",
+      "assertions": [
+        {
+          "description": "competitors.md 파일 생성 확인",
+          "type": "file_exists",
+          "target": "../../.docs/content-analysis/competitors.md"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "작성된 코드의 문법 오류를 수정해줘.",
+      "should_trigger": false,
+      "expected_output": "경쟁사 분석과 관련 없는 요청이므로 스킬이 호출되지 않아야 합니다.",
+      "assertions": []
+    }
+  ]
+}

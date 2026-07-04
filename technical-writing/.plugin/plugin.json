@@ -1,0 +1,6 @@
+{
+  "name": "technical-writing",
+  "version": "1.0.0",
+  "description": "테크니컬 라이팅(기술 문서 작성 및 교정) 지원을 위한 에이전트 플러그인",
+  "rules": "./rules/"
+}

@@ -1,0 +1,24 @@
+{
+  "skill_name": "review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "방금 작성된 API 가이드 문서(api-guide.md)에 오류가 없는지 검토해줘.",
+      "expected_output": "invoke_subagent를 통해 3개의 서브 에이전트를 호출하고, 결과적으로 .docs/review-reports/api-guide.md 파일이 생성되어야 합니다.",
+      "assertions": [
+        {
+          "description": "리뷰 리포트 파일이 생성되어야 함",
+          "type": "file_exists",
+          "target": "../../.docs/review-reports/api-guide.md"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "로그인 페이지 CSS 코드를 리뷰해줘.",
+      "should_trigger": false,
+      "expected_output": "이 스킬이 호출되지 않아야 합니다.",
+      "assertions": []
+    }
+  ]
+}

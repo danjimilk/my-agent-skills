@@ -1,0 +1,22 @@
+{
+  "test_cases": [
+    {
+      "prompt": "개발자가 슬랙으로 보낸 회원가입 API 초안(텍스트)이야. 이걸 토대로 json 포맷의 정식 API 레퍼런스를 만들어줘.",
+      "expected_output": "OpenAPI 3.0 스펙에 맞는 JSON 파일이나 코드 블록 출력",
+      "assertions": [
+        "결과물은 유효한 JSON 포맷이어야 한다.",
+        "openapi 버전 필드가 '3.0.x'로 명시되어야 한다.",
+        "info, paths 컴포넌트가 존재해야 한다."
+      ]
+    },
+    {
+      "prompt": "위키에 작성된 사용자 프로필 조회 및 수정 API 설명을 줄게. 이걸 분석해서 레퍼런스를 md 포맷으로 생성해줘.",
+      "expected_output": "Markdown 파일 생성",
+      "assertions": [
+        "내부적으로 JSON/YAML 기반 스펙 파일이 먼저 생성되어야 한다.",
+        "scripts/generate-md.js 스크립트가 호출되어 마크다운 변환 작업이 수행되어야 한다.",
+        "최종 결과물로 OpenAPI 스펙 기반의 Markdown 문서(.md)가 생성되어야 한다."
+      ]
+    }
+  ]
+}

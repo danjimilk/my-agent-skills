@@ -1,0 +1,30 @@
+{
+  "skill_name": "glossary",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "새로운 문서에서 용어를 추출해줘. 문서에는 'BFF(Backend For Frontend)'와 'Circuit Breaker'라는 단어가 많이 나오는데 우리 시스템에서 특별하게 쓰여.",
+      "expected_output": ".docs/glossary.json 파일이 생성 또는 업데이트되고, 올바른 JSON 배열 형식으로 용어가 포함되어야 합니다.",
+      "assertions": [
+        {
+          "description": "glossary.json 파일이 생성/업데이트되어야 함",
+          "type": "file_exists",
+          "target": "../../.docs/glossary.json"
+        },
+        {
+          "description": "BFF 단어가 json에 포함되어야 함",
+          "type": "regex_match",
+          "target": "../../.docs/glossary.json",
+          "pattern": "\"term\"\\s*:\\s*\"BFF\""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "간단한 파이썬 스크립트를 짜줘.",
+      "should_trigger": false,
+      "expected_output": "이 스킬이 호출되지 않아야 합니다.",
+      "assertions": []
+    }
+  ]
+}

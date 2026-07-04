@@ -1,0 +1,25 @@
+{
+  "skill_name": "getting-started",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "시작하기 문서를 써줘. 우리 앱은 'hello_world'라는 CLI 툴이야. 설치는 'npm install -g hello_world'고 실행은 'hello_world run'이야.",
+      "expected_output": "Task 타입의 메타데이터가 포함된 마크다운 형식의 가이드 문서가 출력되어야 합니다. 코드 블록에 명령어가 포함되어야 합니다.",
+      "assertions": [
+        {
+          "description": "메타데이터(type: task)가 포함되어야 함",
+          "type": "regex_match",
+          "target": "../../getting-started.md",
+          "pattern": "(?i)type:\\s*task|\\[Type:\\s*Task\\]"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "API 레퍼런스 문서를 자동 생성해줘.",
+      "should_trigger": false,
+      "expected_output": "이 스킬이 호출되지 않아야 합니다.",
+      "assertions": []
+    }
+  ]
+}
